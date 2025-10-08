@@ -10,7 +10,8 @@
         <div class="steam"></div>
         <style>
             :root {
-                --pizza-rotate: rotateX(60deg);
+                --pizza-rotate: rotate3d(1, 0.1, 0, 60deg);
+                --pizza-shadow-inset: inset 0em 0em 2em 2em (0, 0, 0, 0.3);
             }
             body {
                 background: hsl(20, 47%, 74%);
@@ -33,23 +34,26 @@
                     radial-gradient(circle at 80% 40%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
                     /* Tomato sauce */
                     radial-gradient(hsl(0, 66%, 36%), hsl(0, 66%, 36%) 60%, hsl(30, 50%, 50%) 65%, hsl(30, 50%, 30%) 100%);
-                box-shadow: 
-                    1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
-                    inset 0 0 1em 1em rgba(0, 0, 0, 0.2);
                 filter: blur(0.6px);
                 animation: float 8s ease-in-out infinite;
             }
             @keyframes float {
                 0% {
-                    box-shadow: 1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8);
+                    box-shadow: 
+                        1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
+                        var(--pizza-shadow-inset);
                     transform: translatey(0px) var(--pizza-rotate);
                 }
                 50% {
-                    box-shadow: 1em 1.5em 3em 2em rgba(0, 0, 0, 0.2);
+                    box-shadow: 
+                        1em 1.5em 3em 2em rgba(0, 0, 0, 0.2),
+                        var(--pizza-shadow-inset);
                     transform: translatey(-20px) var(--pizza-rotate);
                 }
                 100% {
-                    box-shadow: 1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8);
+                    box-shadow: 
+                        1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
+                        var(--pizza-shadow-inset);
                     transform: translatey(0px) var(--pizza-rotate);
                 }
             }

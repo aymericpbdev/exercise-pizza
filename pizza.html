@@ -9,6 +9,9 @@
         <div class="pizza"></div>
         <div class="steam"></div>
         <style>
+            :root {
+                --pizza-rotate: rotateX(60deg);
+            }
             body {
                 background: hsl(20, 47%, 74%);
             }
@@ -17,25 +20,34 @@
                 width: 300px;
                 height: 300px;
                 border-radius: 50%;
-                background: radial-gradient(hsl(0, 66%, 36%), hsl(0, 66%, 36%) 60%, hsl(30, 50%, 50%) 65%, hsl(30, 50%, 30%) 100%);
+                background: 
+                    radial-gradient(circle at 30% 50%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
+                    radial-gradient(circle at 60% 70%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
+                    radial-gradient(circle at 70% 30%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
+                    radial-gradient(circle at 15% 60%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    radial-gradient(circle at 40% 70%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    radial-gradient(circle at 40% 30%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    radial-gradient(circle at 60% 50%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    radial-gradient(circle at 80% 40%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    radial-gradient(hsl(0, 66%, 36%), hsl(0, 66%, 36%) 60%, hsl(30, 50%, 50%) 65%, hsl(30, 50%, 30%) 100%);
                 box-shadow: 
                     1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
                     inset 0 0 1em 1em rgba(0, 0, 0, 0.2);
                 filter: blur(0.6px);
-                animation: float 6s ease-in-out infinite;
+                animation: float 8s ease-in-out infinite;
             }
             @keyframes float {
                 0% {
                     box-shadow: 1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8);
-                    transform: translatey(0px) rotateX(60deg);
+                    transform: translatey(0px) var(--pizza-rotate);
                 }
                 50% {
-                    box-shadow: 1em 1.5em 2em 1em rgba(0, 0, 0, 0.2);
-                    transform: translatey(-20px) rotateX(60deg);
+                    box-shadow: 1em 1.5em 3em 2em rgba(0, 0, 0, 0.2);
+                    transform: translatey(-20px) var(--pizza-rotate);
                 }
                 100% {
                     box-shadow: 1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8);
-                    transform: translatey(0px) rotateX(60deg);
+                    transform: translatey(0px) var(--pizza-rotate);
                 }
             }
         </style>

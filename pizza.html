@@ -7,11 +7,12 @@
     </head>
     <body>
         <div class="pizza"></div>
-        <div class="steam"></div>
         <style>
             :root {
                 --pizza-rotate: rotate3d(1, 0.1, 0, 60deg);
-                --pizza-shadow-inset: inset 0em 0em 2em 2em (0, 0, 0, 0.3);
+                --pizza-shadow-inset: inset 0em 0em 2em 2em rgba(0, 0, 0, 0.2);
+                --ingredient-1-color: transparent 0 2px, hsl(80, 60%, 35%)3px 8px, transparent 11px;
+                --ingredient-2-color: hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 17%) 10px 12px, transparent 14px; 
             }
             body {
                 background: hsl(20, 47%, 74%);
@@ -22,36 +23,36 @@
                 height: 300px;
                 border-radius: 50%;
                 background: 
-                    /* Olive */
-                    radial-gradient(circle at 30% 50%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
-                    radial-gradient(circle at 60% 70%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
-                    radial-gradient(circle at 70% 30%, transparent 0 2px, hsl(80, 60%, 35%) 3px 8px, transparent 11px),
-                    /* Pepperoni */
-                    radial-gradient(circle at 15% 60%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
-                    radial-gradient(circle at 40% 70%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
-                    radial-gradient(circle at 40% 30%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
-                    radial-gradient(circle at 60% 50%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
-                    radial-gradient(circle at 80% 40%, hsl(0, 100%, 27%) 0 10px, hsl(0, 100%, 25%) 10px 12px, transparent 14px),
+                    /* Ingredient 1 Olive */
+                    radial-gradient(circle at 30% 50%, var(--ingredient-1-color)),
+                    radial-gradient(circle at 60% 70%, var(--ingredient-1-color)),
+                    radial-gradient(circle at 70% 30%, var(--ingredient-1-color)),
+                    /* Ingredient 2 Pepperoni */
+                    radial-gradient(circle at 15% 60%, var(--ingredient-2-color)),
+                    radial-gradient(circle at 40% 70%, var(--ingredient-2-color)),
+                    radial-gradient(circle at 40% 30%, var(--ingredient-2-color)),
+                    radial-gradient(circle at 60% 50%, var(--ingredient-2-color)),
+                    radial-gradient(circle at 80% 40%, var(--ingredient-2-color)),
                     /* Tomato sauce */
-                    radial-gradient(hsl(0, 66%, 36%), hsl(0, 66%, 36%) 60%, hsl(30, 50%, 50%) 65%, hsl(30, 50%, 30%) 100%);
+                    radial-gradient(hsl(0, 66%, 36%), hsl(0, 66%, 36%) 60%, hsl(25, 76%, 55%) 65%, hsl(30, 100%, 50%) 100%);
                 filter: blur(0.6px);
                 animation: float 8s ease-in-out infinite;
             }
             @keyframes float {
                 0% {
-                    box-shadow: 
+                    box-shadow:
                         1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
                         var(--pizza-shadow-inset);
                     transform: translatey(0px) var(--pizza-rotate);
                 }
                 50% {
-                    box-shadow: 
+                    box-shadow:
                         1em 1.5em 3em 2em rgba(0, 0, 0, 0.2),
                         var(--pizza-shadow-inset);
                     transform: translatey(-20px) var(--pizza-rotate);
                 }
                 100% {
-                    box-shadow: 
+                    box-shadow:
                         1em 1.5em 2em 0.5em rgba(0, 0, 0, 0.8),
                         var(--pizza-shadow-inset);
                     transform: translatey(0px) var(--pizza-rotate);
